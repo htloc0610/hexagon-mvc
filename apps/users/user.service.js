@@ -14,8 +14,9 @@ const userService = {
             ...userData,
             verificationToken: verificationToken,
             password: hashedPassword, // Lưu mật khẩu đã mã hóa
+            isVerify: true,
         });
-        emailHelper.sendVerificationEmail(newUser.email, verificationToken);
+        // emailHelper.sendVerificationEmail(newUser.email, verificationToken);
         return newUser;
         } catch (error) {
         throw new Error("Error creating user: " + error.message);
